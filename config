@@ -13,7 +13,7 @@ set $mod Mod4
 
 # execute my startup programs
 #exec ~/.startup
-exec_always xrandr --output VGA-0 --mode 1920x1080 --pos 3840x0 --rotate normal --output DVI-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal 
+exec always xrandr --output VGA-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal
 exec_always --no-startup-id "~/.i3/scripts/start_volumed.sh"
 exec_always --no-startup-id /usr/bin/rofi
 exec_always --no-startup-id "xautolock -time 5 -locker 'i3lock -c 000000'"
