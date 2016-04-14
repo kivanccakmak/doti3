@@ -12,22 +12,23 @@
 set $mod Mod4
 
 # execute my startup programs
-exec ~/.startup
+#exec ~/.startup
 exec_always xrandr --output VGA-0 --mode 1920x1080 --pos 3840x0 --rotate normal --output DVI-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal 
 exec_always --no-startup-id "~/.i3/scripts/start_volumed.sh"
-exec_always --no-startup-id /usr/local/bin/rofi
+exec_always --no-startup-id /usr/bin/rofi
 exec_always --no-startup-id "xautolock -time 5 -locker 'i3lock -c 000000'"
-exec_always --no-startup-id "/usr/local/bin/rofi $(~/.i3/scripts/i3-color-rofi.py) -key-run mod4+d rofi $(~/.i3/scripts/i3-color-rofi.py) -key-window mod1+Tab"
-
+exec_always --no-startup-id "/usr/bin/rofi $(~/.i3/scripts/i3-color-rofi.py) -key-run mod4+d rofi $(~/.i3/scripts/i3-color-rofi.py) -key-window mod1+Tab"
+exec_always --no-startup-id "~/.dropbox-dist/dropboxd"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans 10
 
 # class                 border  backgr. text    indicator
 client.focused          #1a4666 #1a4666 #ffffff #2e9ef4
